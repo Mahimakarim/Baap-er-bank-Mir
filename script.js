@@ -21,7 +21,35 @@ function withdraw() {
 
     withdrawOutput.innerText = parseFloat(withdrawOutput.innerText) + parseFloat(withdrawValue.value);
 
-    balanceOutput.innerText =parseFloat(balanceOutput.innerText) -  parseFloat(withdrawValue.value); 
+    balanceOutput.innerText = parseFloat(balanceOutput.innerText) -  parseFloat(withdrawValue.value); 
+
+    withdrawValue.value = "";
+}
+
+
+
+function addMoney(currentAmount, newAmount){
+    return parseFloat(currentAmount) + parseFloat(newAmoun)t;
+}
+
+function getMoney(currentAmount, newAmount) {
+    return parseFloat(currentAmount) - parseFloat(newAmount);
+}
+
+function deposit() {
+    const totalBalance = addMoney(depositOutput.innerText, depositValue.value);
+    depositOutput.innerText = totalBalance;
+    balanceOutput.innerText = totalBalance;
+
+    depositValue.value = "";
+}
+
+function withdraw() {
+    const totalWithdraw = getMoney(withdrawOutput.innerText, withdrawValue);
+    withdrawOutput.innerText = totalWithdraw;
+
+    const totalBalance = getMoney(balanceOutput.innerText, withdrawValue.value);
+    balanceOutput.innerText = totalBalance;
 
     withdrawValue.value = "";
 }
